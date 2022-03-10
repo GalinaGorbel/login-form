@@ -1,12 +1,10 @@
 import {
-  animate,
   state,
   style,
-  transition,
   trigger,
 } from '@angular/animations';
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Platform } from '@angular/cdk/platform';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -30,8 +28,15 @@ import { Component } from '@angular/core';
     ]),
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'login-form';
   state = 'normal';
   public showSignUp = true;
+  public isMobile: boolean | undefined;
+
+  constructor(private platform: Platform) {}
+
+  ngOnInit(): void {
+    this.isMobile = this.platform.ANDROID || this.platform.IOS
+  }
 }
