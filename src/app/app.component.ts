@@ -4,7 +4,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@angular/cdk/platform';
+import { BrowserInfoService } from './browser-info.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,11 +32,9 @@ export class AppComponent implements OnInit {
   title = 'login-form';
   state = 'normal';
   public showSignUp = true;
-  public isMobile: boolean | undefined;
+  readonly isWebBrowser = !this.browserInfo.isMobile();
 
-  constructor(private platform: Platform) {}
+  constructor(private browserInfo: BrowserInfoService) {}
 
-  ngOnInit(): void {
-    this.isMobile = this.platform.ANDROID || this.platform.IOS
-  }
+  ngOnInit(): void {}
 }
