@@ -8,6 +8,6 @@ export class BrowserInfoService {
   constructor(private platform: Platform) {}
 
   isMobile(): boolean {
-    return this.platform.ANDROID || this.platform.IOS;
+    return this.platform.ANDROID || this.platform.IOS || window.innerWidth < 1000;
   }
 }
