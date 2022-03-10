@@ -20,9 +20,9 @@
         Login
       </button>
     </div>
-    <div *ngIf="!isMobile">
+    <ng-container *ngIf="!isMobile">
       Десктопный браузер
-    </div>
+    </ng-container>
   </div>
   <app-sign-up-form></app-sign-up-form>
   <app-login-form></app-login-form>
