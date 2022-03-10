@@ -36,5 +36,7 @@ export class AppComponent implements OnInit {
 
   constructor(private browserInfo: BrowserInfoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.isWebBrowser)
+  }
 }
