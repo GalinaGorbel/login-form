@@ -1,9 +1,26 @@
 <div class="container">
-  <div class="message">
+  <div
+    class="message"
+    [class]="showSignUp === false ? 'login' : 'signup'"
+    [@divState]="state"
+  >
     <div class="message__wrapper">
-      <button class="button button_message" id="signup">Sign Up</button>
-      <button class="button button_message" id="login"> Login</button>
+      <button
+        class="button button_message"
+        id="signup"
+        (click)="showSignUp = true; state = 'normal'"
+      >
+        Sign Up
+      </button>
+      <button
+        class="button button_message"
+        id="login"
+        (click)="showSignUp = false; state = 'transform'"
+      >
+        Login
+      </button>
     </div>
   </div>
   <app-sign-up-form></app-sign-up-form>
+  <app-login-form></app-login-form>
 </div>

@@ -15,8 +15,8 @@
   background: white;
   width: 50%;
   height: 100%;
-  transition: 0.5s all ease;
-  transform: translateX(100%);
+  // transition: 0.5s all ease;
+  // transform: translateX(100%);
   z-index: 4;
 
   &:before {
@@ -37,6 +37,20 @@
 
 .button_message {
   margin: 5px 0;
+}
+
+.signup {
+  &:before {
+    opacity: 0.3;
+    left: 0;
+  }
+}
+
+.login {
+  &:before {
+    opacity: 0.3;
+    left: 100%;
+  }
 }
 
 @media (max-width: 750px) {
