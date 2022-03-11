@@ -8,6 +8,6 @@ export class BrowserInfoService {
   constructor(private platform: Platform) {}
 
   isMobile(): boolean {
-    return this.platform.ANDROID || this.platform.IOS || (window.screen.width <= 320 && window.screen.height <= 768);
+    return this.platform.ANDROID || this.platform.IOS || (window.innerWidth >= 320 && window.innerWidth <= 768);
   }
 }
