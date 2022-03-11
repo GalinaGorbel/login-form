@@ -21,10 +21,10 @@
       </button>
     </div>
     <ng-container *ngIf="isWebBrowser; else isMobile">
-      Десктопная версия
+      Десктопная версия. Размер экрана {{widthDevice}}
     </ng-container>
     <ng-template #isMobile>
-      Мобильная версия
+      Мобильная версия. Размер экрана {{widthDevice}}
     </ng-template>
   </div>
   <app-sign-up-form></app-sign-up-form>

@@ -34,7 +34,8 @@ export class AppComponent implements OnInit {
   state = 'normal';
   public showSignUp = true;
   readonly isWebBrowser = !this.browserInfo.isMobile();
-  
+  readonly widthDevice = window.innerWidth;
+
   constructor(private browserInfo: BrowserInfoService) {}
 
   ngOnInit(): void {}
