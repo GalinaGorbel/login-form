@@ -8,8 +8,14 @@ export class BrowserInfoService {
   constructor(private platform: Platform) {}
 
   isMobile(): boolean {
-    var checkMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (checkMobile) {
+    return this.platform.ANDROID || this.platform.IOS;
+  }
+
+  isMobileByJs(): boolean {
+    if (
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/Android/i)
+    ) {
       return true;
     } else {
       return false;

@@ -5,6 +5,7 @@ import {
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { BrowserInfoService } from './browser-info.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,11 +33,12 @@ export class AppComponent implements OnInit {
   title = 'login-form';
   state = 'normal';
   public showSignUp = true;
-  readonly isWebBrowser = !this.browserInfo.isMobile();
+  readonly isWebBrowser = !this.deviceService.isMobile();
+  // readonly isWebBrowser = !this.browserInfo.isMobile();
+  // readonly isWebBrowserJS = !this.browserInfo.isMobileByJs();
+  // readonly isMobileA = this.deviceService.isMobile()
+  
+  constructor(private browserInfo: BrowserInfoService, private deviceService: DeviceDetectorService) {}
 
-  constructor(private browserInfo: BrowserInfoService) {}
-
-  ngOnInit(): void {
-    console.log(this.isWebBrowser)
-  }
+  ngOnInit(): void {}
 }
