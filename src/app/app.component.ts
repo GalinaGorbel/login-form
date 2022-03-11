@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
   public showSignUp = true;
   readonly isWebBrowser = !this.browserInfo.isMobile();
   readonly isWebBrowserJS = !this.browserInfo.isMobileByJs();
+  platform = navigator.platform
   
   constructor(private browserInfo: BrowserInfoService, private deviceService: DeviceDetectorService) {}
 

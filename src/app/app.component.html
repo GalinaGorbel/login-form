@@ -22,11 +22,11 @@
     </div>
     <ng-container *ngIf="isWebBrowser; else isMobile">
       Десктопная версия 
-      Проверка на десктопный: {{'Angular: ' + isWebBrowser }} {{ 'Js: ' + isWebBrowserJS }}
+      Проверка на платформу: {{'платформа: ' + platform }}
     </ng-container>
     <ng-template #isMobile>
       Мобильная версия 
-      Проверка на десктопный:{{'Angular' + isWebBrowser }} {{ 'Js: ' + isWebBrowserJS }}
+      Проверка на платформу:{{'платформа: ' + platform }}
     </ng-template>
   </div>
   <app-sign-up-form></app-sign-up-form>
