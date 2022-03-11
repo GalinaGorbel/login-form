@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   state = 'normal';
   public showSignUp = true;
   readonly isWebBrowser = !this.browserInfo.isMobile();
-  readonly widthDevice = window.innerWidth;
+  readonly widthDevice = window.screen.width;
 
   constructor(private browserInfo: BrowserInfoService) {}
 
