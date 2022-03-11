@@ -34,10 +34,8 @@ export class AppComponent implements OnInit {
   state = 'normal';
   public showSignUp = true;
   readonly isWebBrowser = !this.browserInfo.isMobile();
-  readonly isWebBrowserJS = !this.browserInfo.isMobileByJs();
-  platform = navigator.platform
   
-  constructor(private browserInfo: BrowserInfoService, private deviceService: DeviceDetectorService) {}
+  constructor(private browserInfo: BrowserInfoService) {}
 
   ngOnInit(): void {}
 }
