@@ -33,10 +33,8 @@ export class AppComponent implements OnInit {
   title = 'login-form';
   state = 'normal';
   public showSignUp = true;
-  readonly isWebBrowser = !this.deviceService.isMobile();
-  // readonly isWebBrowser = !this.browserInfo.isMobile();
-  // readonly isWebBrowserJS = !this.browserInfo.isMobileByJs();
-  // readonly isMobileA = this.deviceService.isMobile()
+  readonly isWebBrowser = !this.browserInfo.isMobile();
+  readonly isWebBrowserJS = !this.browserInfo.isMobileByJs();
   
   constructor(private browserInfo: BrowserInfoService, private deviceService: DeviceDetectorService) {}
 
