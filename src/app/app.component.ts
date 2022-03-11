@@ -4,8 +4,6 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { BrowserInfoService } from './browser-info.service';
-import { DeviceDetectorService } from 'ngx-device-detector';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,10 +31,8 @@ export class AppComponent implements OnInit {
   title = 'login-form';
   state = 'normal';
   public showSignUp = true;
-  readonly isWebBrowser = !this.browserInfo.isMobile();
-  readonly widthDevice = window.screen.width;
 
-  constructor(private browserInfo: BrowserInfoService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
