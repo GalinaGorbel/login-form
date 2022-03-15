@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
   curPlatform = this.currentPlatform();
   navPlatform = window.navigator.platform;
   detector = this.deviceService.isDesktop()
+  isMobile = this.deviceService.isMobile()
 
   constructor(private platform: Platform, private deviceService: DeviceDetectorService) {}
 
