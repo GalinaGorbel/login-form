@@ -37,7 +37,9 @@ export class AppComponent implements OnInit {
 
   constructor(private platform: Platform, private deviceService: DeviceDetectorService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.deviceInfo)
+  }
 
   currentPlatform(): any {
     if (this.platform.ANDROID) {
