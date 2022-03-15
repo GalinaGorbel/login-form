@@ -1,9 +1,6 @@
-import {
-  state,
-  style,
-  trigger,
-} from '@angular/animations';
+import { state, style, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Platform } from '@angular/cdk/platform';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -31,8 +28,17 @@ export class AppComponent implements OnInit {
   title = 'login-form';
   state = 'normal';
   public showSignUp = true;
+  curPlatform = this.currentPlatform();
 
-  constructor() {}
+  constructor(private platform: Platform) {}
 
   ngOnInit(): void {}
+
+  currentPlatform(): any {
+    if (this.platform.ANDROID) {
+      return 'ANDROID';
+    } else if (this.platform.IOS) {
+      return 'IOS';
+    }
+  }
 }
