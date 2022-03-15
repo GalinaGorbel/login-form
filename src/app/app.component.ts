@@ -1,6 +1,7 @@
 import { state, style, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@angular/cdk/platform';
+import { DeviceDetectorService } from 'ngx-device-detector';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,8 +30,10 @@ export class AppComponent implements OnInit {
   state = 'normal';
   public showSignUp = true;
   curPlatform = this.currentPlatform();
+  navPlatform = window.navigator.platform;
+  detector = this.deviceService.isDesktop()
 
-  constructor(private platform: Platform) {}
+  constructor(private platform: Platform, private deviceService: DeviceDetectorService) {}
 
   ngOnInit(): void {}
 
