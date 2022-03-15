@@ -1,7 +1,5 @@
 import { state, style, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-import { Platform } from '@angular/cdk/platform';
-import { DeviceDetectorService } from 'ngx-device-detector';
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,27 +23,8 @@ import { DeviceDetectorService } from 'ngx-device-detector';
     ]),
   ],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'login-form';
   state = 'normal';
   public showSignUp = true;
-  curPlatform = this.currentPlatform();
-  navPlatform = window.navigator.platform;
-  detector = this.deviceService.isDesktop()
-  isMobile = this.deviceService.isMobile()
-  deviceInfo = this.deviceService.getDeviceInfo()
-
-  constructor(private platform: Platform, private deviceService: DeviceDetectorService) {}
-
-  ngOnInit(): void {
-    console.log(this.deviceInfo)
-  }
-
-  currentPlatform(): any {
-    if (this.platform.ANDROID) {
-      return 'ANDROID';
-    } else if (this.platform.IOS) {
-      return 'IOS';
-    }
-  }
 }
