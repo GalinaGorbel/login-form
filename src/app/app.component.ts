@@ -26,5 +26,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'login-form';
   state = 'normal';
+  platform = navigator.appVersion.indexOf('Mac') != -1
   public showSignUp = true;
 }
