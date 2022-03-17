@@ -27,5 +27,8 @@ export class AppComponent {
   title = 'login-form';
   state = 'normal';
   platform = navigator.appVersion.indexOf('Mac') != -1
+  screenWidth = window.screen.width
+  innerWidth = window.innerWidth
+  innerHeight = window.innerHeight
   public showSignUp = true;
 }
