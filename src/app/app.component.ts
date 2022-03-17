@@ -30,5 +30,7 @@ export class AppComponent {
   screenWidth = window.screen.width
   innerWidth = window.innerWidth
   innerHeight = window.innerHeight
+  availHeight = window.screen.availWidth
+  pixelRatio = window.devicePixelRatio
   public showSignUp = true;
 }
